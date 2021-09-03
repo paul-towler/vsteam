@@ -1,7 +1,8 @@
 {
    // Set container specific settings
 	"settings": {
-		"terminal.integrated.defaultProfile.linux": "PowerShell"
+		"terminal.integrated.defaultProfile.linux": "pwsh",
+		"terminal.integrated.defaultProfile.windows": "PowerShell"
 	},
 
    "extensions": [
