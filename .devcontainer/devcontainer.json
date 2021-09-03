@@ -7,5 +7,7 @@
 
    "extensions": [
        "ms-vscode.PowerShell"
-   ]
+   ],
+
+   "postCreateCommand": "pwsh"
 }
