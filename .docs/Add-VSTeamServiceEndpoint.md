@@ -14,6 +14,38 @@ The cmdlet adds a new generic connection between TFS/AzD and a third party servi
 
 ## EXAMPLES
 
+### Example 1 - Azure Stack Service Connection
+```powershell
+$methodParameters = @{
+    ProjectName  = "some_project_name"
+    endpointName = "new_endpoint_name"
+    endpointType = "azurerm"
+    object        = @{
+        url="https://adminmanagement.local.azurestack.external"; 
+        authorization = @{
+            parameters = @{
+                serviceprincipalid = "some_service_principal_id"
+                serviceprincipalkey = "some_service_principal_key"
+                authenticationType = "spnKey"
+                tenantid = "some_tenant_id"
+            }
+            scheme = "ServicePrincipal"
+        }
+        isShared=$true
+        isReady=$true
+        data = @{
+            environment = "AzureStack"
+            scopeLevel = "Subscription"
+            subscriptionId = "some_subscription_id"
+            subscriptionName = "some_subscription_name"
+            creationMode = "Manual"
+        }
+    }
+ }
+
+ Add-VSTeamServiceEndpoint @methodParameters
+```
+
 ## PARAMETERS
 
 ### Object
